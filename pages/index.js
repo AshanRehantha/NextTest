@@ -1,10 +1,8 @@
 import React, {useState} from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import ImagesCard from './_uiComponant/ui_ImagesCared'
-import Headers from './_uiComponant/Ui_Header'
-import HomeFilter from './_uiComponant/ui_Home_filter'
+import ImagesCard from '../components/_uiComponant/ui_ImagesCared'
+import Headers from '../components/_uiComponant/Ui_Header'
+import HomeFilter from '../components/_uiComponant/ui_Home_filter'
+import { useRouter } from 'next/router'
 
 export async function getServerSideProps() {
   const res = await fetch(`https://randomuser.me/api/?results=560`)
@@ -15,6 +13,7 @@ export async function getServerSideProps() {
 export default function Home(data) {
   const [fetchData, setFetchData] = useState(data.data.results);
   const [gender, setGender] = useState("all");
+  const router = useRouter();
 
   const genData = async() => {
     const res = await fetch(`https://randomuser.me/api/?results=560`)
@@ -30,27 +29,20 @@ export default function Home(data) {
     }
   }
 
-  console.log('====================================');
-  console.log(filterGender());
-  console.log('====================================');
   return (
     <>
       <Headers
         genNewUsers={genData}
+        pathname={router.pathname}
       />
       <HomeFilter
         selectedGender={setGender}
         counter={filterGender().length}
+        selectGender={gender}
       />
-
       <ImagesCard
         GenFace={filterGender()}
       />
-      {/* {filterGender().map(faces => (
-        <ImagesCard
-          key={faces.cell}
-        />
-      ))} */}
     </>
   )
 }

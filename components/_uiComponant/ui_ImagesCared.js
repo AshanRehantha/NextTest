@@ -8,7 +8,9 @@ const ImagesCard = (props) => {
         <ul className={UiStyle.imageCard}>
             {props.GenFace.map(faces => (
             <li key={faces.cell}>
-                <img src={faces.picture.thumbnail} alt="faceimages" />
+                <a href={'/face_user/' + faces.email}>
+                  <img src={faces.picture.thumbnail} alt="faceimages" />
+                </a>
             </li>
             ))}
         </ul>

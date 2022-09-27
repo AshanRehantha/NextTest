@@ -8,7 +8,10 @@ const Headers = (props) => {
         FACES
     </div>
     <div className={styles.header_button}>
-      <button className={styles.gen_button} onClick={props.genNewUsers} >generate new users</button>
+      {props.pathname == "/" ? 
+        <button className={styles.gen_button} onClick={props.genNewUsers} >generate new users</button> :
+        <button className={styles.gen_button} onClick={props.backButton}>Back</button>
+      }
     </div>
     </div>
   )

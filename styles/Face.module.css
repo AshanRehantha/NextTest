@@ -1,0 +1,70 @@
+.single_wapper{
+    width:100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.single_top{
+    width:100%;
+    height: 30%;
+    background-color:#fff ;
+}
+.single_bot{
+    width:100%;
+    height: 70%;
+    background-color:#87B6FD ;
+}
+.images_border{
+    display: block;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: #DDD;
+    border: 10px solid #1B76FD;
+    overflow: hidden;
+    position: absolute;
+    left: 40%;
+    top:18%;
+}
+.images_border img {
+    height: 300px;
+    width: 300px
+}
+.userDetailsWapper{
+    width:100%;
+    height:150px;
+    position: relative;
+    top:35%
+}
+.userDetailsWapperUserName{
+    text-align: center;
+    font-size:1.5em;
+    color: #000;
+    width: 100%;
+    font-weight: bold;
+}
+.usercontactwrapper{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    left: 30%;
+    margin-top:40px;
+    position: relative;
+}
+.usercontactIcon{
+    border-radius: 50%;
+    height: 27px;
+    width: 27px;
+    color:#fff;
+    background-color: #004DC0;
+    text-align: center;
+    padding:3px
+}
+.userDetailsCard{
+    width:280px;
+}
+.userText{
+    position: relative;
+    top: -25px;
+    left: 33px;
+}
